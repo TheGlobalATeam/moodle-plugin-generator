@@ -2,7 +2,7 @@
 
 require_once($CFG->libdir . '/pagelib.php');
 
-class block_sitdinner extends block_base {
+class block_<%= pluginName %> extends block_base {
 
 	private $jsWorkerLoaded = false;
 

@@ -26,14 +26,15 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     this.fs.copy(
       this.templatePath('dummyfile.txt'),
-      this.destinationPath(this.props.pluginName + '.txt')
+      this.destinationPath(this.props.pluginName + '_Test.txt')
     );
 
     //copy folder with all content.
     //TODO change names of files
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('sitdinner'),
-      this.destinationRoot('sitdinner')
+      this.destinationRoot(this.props.pluginName),
+      { pluginName: this.props.pluginName }
     );
 
     // this.fs.copy(
