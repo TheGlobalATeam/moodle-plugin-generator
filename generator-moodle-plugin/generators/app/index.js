@@ -26,7 +26,7 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     this.fs.copy(
       this.templatePath('dummyfile.txt'),
-      this.destinationPath(this.props.pluginName.'.txt')
+      this.destinationPath(this.props.pluginName + '.txt')
     );
 
     //copy folder with all content.
