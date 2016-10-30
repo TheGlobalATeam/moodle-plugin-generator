@@ -11,10 +11,10 @@ module.exports = yeoman.Base.extend({
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'input',
+      name: 'pluginName',
+      message: 'Your blockplugins name',
+      default: "aRandomName"
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -26,8 +26,21 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     this.fs.copy(
       this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.destinationPath(this.props.pluginName.'.txt')
     );
+
+    //copy folder with all content.
+    //TODO change names of files
+    this.fs.copy(
+      this.templatePath('sitdinner'),
+      this.destinationRoot('sitdinner')
+    );
+
+    // this.fs.copy(
+    //   this.templatePath('.*'),
+    //   this.destinationRoot()
+    // );
+
   },
 
   install: function () {
