@@ -3,5 +3,5 @@ $plugin->version = 2016021200;        // The current plugin version (Date: YYYYM
 $plugin->requires = 2013040500;        // Requires this Moodle version
 $plugin->release = '1.0';
 
-$plugin->component = 'block_sitdinner';
+$plugin->component = 'block_<%= pluginName %>';
 $plugin->maturity = MATURITY_ALPHA;

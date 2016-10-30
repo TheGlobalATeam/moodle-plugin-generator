@@ -9,10 +9,7 @@ class block_<%= pluginName %> extends block_base {
     public function init() {
 		GLOBAL $PAGE;
 
-        $this->title = get_string('sitdinner', 'block_sitdinner');
-
-
-
+        $this->title = get_string('<%= pluginName %>', 'block_<%= pluginName %>');
 
     }
 
@@ -27,40 +24,20 @@ class block_<%= pluginName %> extends block_base {
 		//loading js file, while preventing moodle catching. probably a better way somewhere...
 		if(!$this->jsWorkerLoaded){
 			$this->jsWorkerLoaded = true;
-			$PAGE->requires->js('/blocks/sitdinner/main.js?'.rand());
+			$PAGE->requires->js('/blocks/<%= pluginName %>/main.js?'.rand());
 		}
 
-		//not working way
-		//$this->page->require->requiresjs('/blocks/sitdinner/main.js');
 
         if ($this->content !== null) {
           return $this->content;
         }
 
         $this->content         =  new stdClass;
-        //$this->content->text   = 'The content of our sitdinner block!';
+        //$this->content->text   = 'The content of our <%= pluginName %> block!';
 
-        //first element with no .=, just =
-        $this->content->text = "<br><b>Todays Dinner:</b> <br>";
+        $this->content->text = "<br><b>A Fully working block plugin!</b> <br>";
 
-
-		$data = file_get_contents('https://www.sit.no/gjovik/mat');
-
-		$tagNameStart = "dishes__single-day";
-		$tagPosStart = strpos ($data, $tagNameStart);
-		$tagPosStart += strlen($tagNameStart) + 2; //+2 for removing rest of tag
-
-		$tagNameEnd = "dishes__week-link";
-		$tagPosEnd = strpos ($data, $tagNameEnd);
-		$tagPosEnd -= strlen($tagNameEnd) - 7;//-7 for removing rest of tag
-
-		$subPart = substr($data, $tagPosStart, $tagPosEnd - $tagPosStart);
-
-		$this->content->text .= $subPart;
-
-
-
-        $this->content->footer = '';
+        $this->content->footer = 'With a footer';
 
         return $this->content;
 

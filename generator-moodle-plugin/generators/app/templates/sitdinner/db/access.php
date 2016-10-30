@@ -2,7 +2,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 $capabilities = array(
-'block/sitdinner:myaddinstance' => array(
+'block/<%= pluginName %>:myaddinstance' => array(
 	'captype' => 'write',
 	'contextlevel' => CONTEXT_COURSE,
 	'archetypes' => array(
@@ -16,7 +16,7 @@ $capabilities = array(
 	'clonepermissionsfrom' => 'moodle/my:manageblocks'
 ),
 
-'block/sitdinner:addinstance' => array(
+'block/<%= pluginName %>:addinstance' => array(
 	'riskbitmask' => RISK_SPAM | RISK_XSS,
 
 	'captype' => 'write',
@@ -31,7 +31,7 @@ $capabilities = array(
 	),
 	'clonepermissionsfrom' => 'moodle/site:manageblocks'
 ),
-	'block/sitdinner:view' => array(
+	'block/<%= pluginName %>:view' => array(
 	'captype' => 'read',
 	'contextlevel' => CONTEXT_COURSE,
 	'archetypes' => array(

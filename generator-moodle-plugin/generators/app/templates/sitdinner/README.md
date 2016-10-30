@@ -1,2 +1,2 @@
-# moodle-sitdinner
-Block plugins for showing todays menu in cantina at gjøvik
+# moodle-<%= pluginName %>
+Block plugins for something new
