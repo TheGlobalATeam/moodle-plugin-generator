@@ -13,8 +13,8 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'pluginName',
-      message: 'Your blockplugins name (no spaces)',
-      default: "aRandomName"
+      message: 'Your blockplugins name (no spaces, and only lowercase)',
+      default: "myblockplugin"
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -24,6 +24,8 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
+
+    this.props.pluginName = this.props.pluginName.toLowerCase();
 
   //not including first sitdinner/
   var fileList = [
