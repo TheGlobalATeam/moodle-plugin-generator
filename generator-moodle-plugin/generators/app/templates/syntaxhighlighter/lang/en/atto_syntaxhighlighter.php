@@ -15,11 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * String for atto plugin 'atto_syntaxhighlighter', language 'en'
+ * String for atto plugin 'atto_<%= pluginName %>', language 'en'
  *
- * @package     atto_syntaxhighlighter
+ * @package     atto_<%= pluginName %>
  * @copyright   2016 The Global A Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Syntax Highlighter';
+$string['pluginname'] = '<%= pluginName %>';

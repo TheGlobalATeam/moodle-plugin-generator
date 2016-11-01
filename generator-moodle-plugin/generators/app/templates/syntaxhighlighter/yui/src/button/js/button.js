@@ -14,26 +14,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * String for component 'atto_syntaxhighlighter', language 'en'
+ * String for component 'atto_<%= pluginName %>', language 'en'
  *
- * @package     atto_syntaxhighlighter
+ * @package     atto_<%= pluginName %>
  * @copyright   2016 The Global A Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
  /**
-  * @module moodle-atto_syntaxhighlighter-button
+  * @module moodle-atto_<%= pluginName %>-button
   */
 
  /**
   * Atto text editor syntax highlighter plugin.
   *
-  * @namespace M.atto_syntaxhighlighter
+  * @namespace M.atto_<%= pluginName %>
   * @class button
   * @extends M.editor_atto.EditorPlugin
   */
 
-Y.namespace('M.atto_syntaxhighlighter').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
+Y.namespace('M.atto_<%= pluginName %>').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
     initializer: function() {
         this.addBasicButton({
             exec: 'strikeThrough',

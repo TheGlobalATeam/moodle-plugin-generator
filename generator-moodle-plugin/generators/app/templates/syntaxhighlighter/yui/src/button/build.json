@@ -1,7 +1,7 @@
 {
-    "name": "moodle-atto_syntaxhighlighter-button",
+    "name": "moodle-atto_<%= pluginName %>-button",
     "builds": {
-        "moodle-atto_syntaxhighlighter-button": {
+        "moodle-atto_<%= pluginName %>-button": {
             "jsfiles": [
                 "button.js"
             ]

@@ -1,5 +1,5 @@
 {
-    "moodle-atto_syntaxhighlighter-button": {
+    "moodle-atto_<%= pluginName %>-button": {
         "requires": [
             "moodle-editor_atto-plugin"
         ]

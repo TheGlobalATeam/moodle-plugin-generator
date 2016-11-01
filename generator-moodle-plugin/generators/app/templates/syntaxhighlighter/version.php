@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * String for component 'atto_syntaxhighlighter', language 'en'
+ * String for component 'atto_<%= pluginName %>', language 'en'
  *
- * @package     atto_syntaxhighlighter
+ * @package     atto_<%= pluginName %>
  * @copyright   2016 The Global A Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,4 +26,4 @@
 
 $plugin->version = 2016102901;
 $plugin->requires = 2013040500;
-$plugin->component = 'atto_syntaxhighlighter';
+$plugin->component = 'atto_<%= pluginName %>';
