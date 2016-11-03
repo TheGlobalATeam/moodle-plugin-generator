@@ -16,8 +16,8 @@
 /**
  * String for component 'atto_<%= pluginName %>', language 'en'
  *
- * @package     atto_<%= pluginName %>
- * @copyright   2016 The Global A Team
+ * @package     atto_button_<%= pluginName %>
+ * @copyright   YourName
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

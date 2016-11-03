@@ -1,5 +1,5 @@
-## Moodles Atto Syntax Highlighter
-Highlight code snippets in atto, a text editor in Moodle.
+## Moodles Atto Button 
+Scaffold code for a new Atto Button. 
 
 ## Setup
 1. Clone this repo under `moodle\lib\editor\atto\plugins\`, and rename the directory to `<%= pluginName %>`.

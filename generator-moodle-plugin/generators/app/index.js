@@ -6,8 +6,6 @@ var yosay = require('yosay');
 const blockPluginID = 0;
 const attoPluginID = 1;
 
-
-
 module.exports = yeoman.Base.extend({
   prompting: function () {
     // Have Yeoman greet the user.
@@ -45,56 +43,48 @@ module.exports = yeoman.Base.extend({
 
   writing: function () {
 
-        //   this.log(yosay(
-        //     'Plugin type ID: ' +this.props.pluginType
-        //   ));
-
       this.props.pluginName = this.props.pluginName.toLowerCase();
 
       let fileList;
       let topFolder
 
-      //code for block plugin
+      //Code for block plugin.
       if(this.props.pluginType == blockPluginID){
 
-          //not including first sitdinner/
+          //Not including first blocktemplate.
           let fileListBlockPlugin = [
-              {inputName: 'block_sitdinner.php', outputName: 'block_'+this.props.pluginName+'.php'},
+              {inputName: 'block_template.php', outputName: 'block_'+this.props.pluginName+'.php'},
               {inputName: 'edit_form.php', outputName: 'edit_form.php'},
               {inputName: 'main.js', outputName: 'main.js'},
               {inputName: 'README.md', outputName: 'README.md'},
               {inputName: 'version.php', outputName: 'version.php'},
               {inputName: 'db/access.php', outputName: 'db/access.php'},
-              {inputName: 'lang/en/block_sitdinner.php', outputName: 'lang/en/block_'+this.props.pluginName+'.php'}
+              {inputName: 'lang/en/block_template.php', outputName: 'lang/en/block_'+this.props.pluginName+'.php'}
           ];
 
-          topFolder = 'sitdinner';
+          topFolder = 'blocktemplate';
           fileList = fileListBlockPlugin;
 
-      //code for atto plugin
+      //Code for atto button.
       }else if(this.props.pluginType == attoPluginID){
 
-          //not including first syntaxhighlighter/
+          //not including first attobuttontemplate/
           let fileListAttoPlugin = [
               {inputName: 'README.md', outputName: 'README.md'},
               {inputName: 'version.php', outputName: 'version.php'},
-              {inputName: 'lang/en/atto_syntaxhighlighter.php', outputName: 'lang/en/atto_'+this.props.pluginName+'.php'}, //not done!
+              {inputName: 'lang/en/attobuttontemplate.php', outputName: 'lang/en/atto_'+this.props.pluginName+'.php'}, //not done!
               {inputName: 'yui/src/button/build.json', outputName: 'yui/src/button/build.json'},
               {inputName: 'yui/src/button/js/button.js', outputName: 'yui/src/button/js/button.js'},
               {inputName: 'yui/src/button/meta/button.json', outputName: 'yui/src/button/meta/button.json'},
           ];
 
-          topFolder = 'syntaxhighlighter';
+          topFolder = 'attobuttontemplate';
           fileList = fileListAttoPlugin;
 
       }
 
-
-      //loop over files and compu using new name and pluginName replacement
+      //Loop over files and compu using new name and pluginName replacement.
       for(let i = 0; i < fileList.length; i ++){
-        //   this.log(yosay(
-        //     'Current file:' + i
-        //   ));
           this.fs.copyTpl(
             this.templatePath(topFolder+'/' + fileList[i].inputName),
             this.destinationPath(this.props.pluginName + "/" + fileList[i].outputName),
@@ -106,7 +96,7 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
-    //no dependencies currently used
+    //No dependencies currently used.
     //this.installDependencies();
   }
 });

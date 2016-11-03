@@ -15,11 +15,21 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * String for atto plugin 'atto_<%= pluginName %>', language 'en'
+ * The Version file
  *
- * @package     atto_<%= pluginName %>
- * @copyright   2016 The Global A Team
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * For each update, especially database changes, the
+ * version needs to be updated to trigger an upgrade when signed in.
+ *
+ * @package <%= pluginName %>
+ * @copyright YourName
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = '<%= pluginName %>';
+/**
+ * MOODLE_INTERNAL - object, moodles intenral object.
+ */
+$plugin->version = 2016021200;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires = 2013040500;        // Requires this Moodle version
+$plugin->release = '1.0';
+$plugin->component = 'block_<%= pluginName %>';
+$plugin->maturity = MATURITY_ALPHA;
