@@ -1,3 +1,4 @@
 node_modules
 generated-plugins
 !generated-plugins/.gitkeep
+.idea/
