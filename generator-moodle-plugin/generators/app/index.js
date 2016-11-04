@@ -95,7 +95,7 @@ module.exports = yeoman.Base.extend({
 			  {inputName: 'filter.php', outputName: 'filter.php'},
               {inputName: 'README.md', outputName: 'README.md'},
               {inputName: 'version.php', outputName: 'version.php'},
-              {inputName: 'lang/en/filter_syntaxhighlighter.php', outputName: 'lang/en/atto_'+this.props.pluginName+'.php'}, //not done!
+              {inputName: 'lang/en/filter_syntaxhighlighter.php', outputName: 'lang/en/filter_'+this.props.pluginName+'.php'}, //not done!
           ];
 
           topFolder = 'syntaxhighlighter';
