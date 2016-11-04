@@ -16,14 +16,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package    filter_geshi
+ * @package    filter_<%= pluginName %>
  * @copyright  2005 Nigel McNie <nigel@geshi.org>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'filter_syntaxhighlighter';
+$plugin->component = 'filter_<%= pluginName %>';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->version = 2015112300;
 $plugin->requires = 2013101800;

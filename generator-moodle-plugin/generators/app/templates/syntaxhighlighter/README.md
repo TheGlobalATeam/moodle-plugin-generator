@@ -1,2 +1,2 @@
-# moodle-filter_syntaxhighlighter
-Plugin for displaying the syntax highlighting 
+# moodle-filter_<%= pluginName %>
+Plugin for displaying the <%= pluginName %> filter

@@ -1,3 +1,3 @@
 <?php
-$string['filtername'] = 'SH';
-$string['pluginname'] = 'SH';
+$string['filtername'] = '<%= pluginName %>';
+$string['pluginname'] = '<%= pluginName %>';

@@ -21,7 +21,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package    filter_geshi
+ * @package    filter_<%= pluginName %>
  * @copyright  2005 Nigel McNie <nigel@geshi.org>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -29,7 +29,7 @@
 //defined('MOODLE_INTERNAL') || die();
 
 
-class filter_syntaxhighlighter extends moodle_text_filter {
+class filter_<%= pluginName %> extends moodle_text_filter {
 
 
 	public function filter($text, array $options = array()) {

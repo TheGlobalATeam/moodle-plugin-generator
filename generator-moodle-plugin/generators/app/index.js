@@ -5,6 +5,7 @@ var yosay = require('yosay');
 
 const blockPluginID = 0;
 const attoPluginID = 1;
+const filterPluginID = 2;
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
@@ -31,6 +32,10 @@ module.exports = yeoman.Base.extend({
             name: 'Atto button',
             value: attoPluginID
         },
+		{
+			name: 'Filter',
+            value: filterPluginID
+		},
     ],
     default: blockPluginID
   }];
@@ -80,6 +85,21 @@ module.exports = yeoman.Base.extend({
 
           topFolder = 'attobuttontemplate';
           fileList = fileListAttoPlugin;
+
+	  //Code for atto button.
+      }else if(this.props.pluginType == filterPluginID){
+
+          //not including first attobuttontemplate/
+          let fileListFilterPlugin = [
+
+			  {inputName: 'filter.php', outputName: 'filter.php'},
+              {inputName: 'README.md', outputName: 'README.md'},
+              {inputName: 'version.php', outputName: 'version.php'},
+              {inputName: 'lang/en/filter_syntaxhighlighter.php', outputName: 'lang/en/atto_'+this.props.pluginName+'.php'}, //not done!
+          ];
+
+          topFolder = 'syntaxhighlighter';
+          fileList = fileListFilterPlugin;
 
       }
 
