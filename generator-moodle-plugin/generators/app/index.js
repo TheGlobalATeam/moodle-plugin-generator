@@ -6,6 +6,7 @@ var yosay = require('yosay');
 const blockPluginID = 0;
 const attoPluginID = 1;
 const filterPluginID = 2;
+const activityModuleID = 3;
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
@@ -36,6 +37,10 @@ module.exports = yeoman.Base.extend({
 			name: 'Filter',
             value: filterPluginID
 		},
+        {
+            name: 'Activity module',
+            value: activityModuleID
+        }
     ],
     default: blockPluginID
   }];
@@ -87,19 +92,38 @@ module.exports = yeoman.Base.extend({
           fileList = fileListAttoPlugin;
 
 	  //Code for atto button.
-      }else if(this.props.pluginType == filterPluginID){
+      }else if(this.props.pluginType == filterPluginID) {
 
           //not including first attobuttontemplate/
           let fileListFilterPlugin = [
 
-			  {inputName: 'filter.php', outputName: 'filter.php'},
+              {inputName: 'filter.php', outputName: 'filter.php'},
               {inputName: 'README.md', outputName: 'README.md'},
               {inputName: 'version.php', outputName: 'version.php'},
-              {inputName: 'lang/en/filter_syntaxhighlighter.php', outputName: 'lang/en/filter_'+this.props.pluginName+'.php'}, //not done!
+              {
+                  inputName: 'lang/en/filter_syntaxhighlighter.php',
+                  outputName: 'lang/en/filter_' + this.props.pluginName + '.php'
+              }, //not done!
           ];
 
           topFolder = 'filtertemplate';
           fileList = fileListFilterPlugin;
+
+          //Code for activity Module
+      }else if(this.props.pluginType == activityModuleID){
+
+              let fileListActivityModule = [
+
+                  {inputName: 'activity_form.php', outputName: 'activity_form.php'},
+                  {inputName: 'index.php', outputName: 'index.php'},
+                  {inputName: 'lib.php', outputName: 'lib.php'},
+                  {inputName: 'version.php', outputName: 'version.php'},
+                  {inputName: 'view.php', outputName: 'view.php'},
+                  {inputName: 'lang/en/activitytemplate.php', outputName: 'lang/en/activityModule_'+this.props.pluginName+'.php'}, //not done!
+              ];
+
+              topFolder = 'activitytemplate';
+              fileList = fileListActivityModule;
 
       }
 
