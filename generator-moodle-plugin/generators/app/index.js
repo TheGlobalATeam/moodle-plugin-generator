@@ -7,6 +7,7 @@ const blockPluginID = 0;
 const attoPluginID = 1;
 const filterPluginID = 2;
 const activityModuleID = 3;
+const themeID=4;
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
@@ -40,6 +41,10 @@ module.exports = yeoman.Base.extend({
         {
             name: 'Activity module',
             value: activityModuleID
+        },
+        {
+            name: 'Theme',
+            value: themeID
         }
     ],
     default: blockPluginID
@@ -125,7 +130,20 @@ module.exports = yeoman.Base.extend({
               topFolder = 'activitytemplate';
               fileList = fileListActivityModule;
 
+             // code for theme
+        }else if(this.props.pluginType == themeID){
+
+          let fileListTheme = [
+              {inputName: 'config.php', outputName: 'config.php'},
+              {inputName: 'version.php', outputName: 'version.php'},
+              {inputName: 'lang/en/theme_template.php', outputName: 'lang/en/theme_'+this.props.pluginName+'.php'}, //not done!
+          ];
+
+          topFolder = 'themetemplate';
+          fileList = fileListTheme;
+
       }
+
 
       //Loop over files and compu using new name and pluginName replacement.
       for(let i = 0; i < fileList.length; i ++){
