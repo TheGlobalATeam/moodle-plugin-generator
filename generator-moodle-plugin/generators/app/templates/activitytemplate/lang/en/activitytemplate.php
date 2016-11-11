@@ -25,4 +25,4 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'activitytemplate';
+$string['pluginname'] = '<%= pluginName %>';
