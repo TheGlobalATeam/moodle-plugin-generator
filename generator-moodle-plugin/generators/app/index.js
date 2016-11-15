@@ -22,6 +22,12 @@ module.exports = yeoman.Base.extend({
       message: 'Your blockplugins name (no spaces, and only lowercase)',
       default: "mynewplugin"
   },
+        {
+            type: 'input',
+            name: 'userName',
+            message: 'Your name (for Copyright): ',
+            default: "User Copyright"
+        },
   {
     type: 'list',
     name: 'pluginType',
@@ -61,11 +67,10 @@ module.exports = yeoman.Base.extend({
       this.props.pluginName = this.props.pluginName.toLowerCase();
 
       let fileList;
-      let topFolder
+      let topFolder;
 
       //Code for block plugin.
       if(this.props.pluginType == blockPluginID){
-
           //Not including first blocktemplate.
           let fileListBlockPlugin = [
               {inputName: 'block_template.php', outputName: 'block_'+this.props.pluginName+'.php'},
@@ -74,7 +79,7 @@ module.exports = yeoman.Base.extend({
               {inputName: 'README.md', outputName: 'README.md'},
               {inputName: 'version.php', outputName: 'version.php'},
               {inputName: 'db/access.php', outputName: 'db/access.php'},
-              {inputName: 'lang/en/block_template.php', outputName: 'lang/en/block_'+this.props.pluginName+'.php'}
+              {inputName: 'lang/en/block_template.php', outputName: 'lang/en/block_'+this.props.pluginName+'.php'},
           ];
 
           topFolder = 'blocktemplate';
@@ -82,7 +87,6 @@ module.exports = yeoman.Base.extend({
 
       //Code for atto button.
       }else if(this.props.pluginType == attoPluginID){
-
           //not including first attobuttontemplate/
           let fileListAttoPlugin = [
               {inputName: 'README.md', outputName: 'README.md'},
@@ -150,10 +154,10 @@ module.exports = yeoman.Base.extend({
           this.fs.copyTpl(
             this.templatePath(topFolder+'/' + fileList[i].inputName),
             this.destinationPath(this.props.pluginName + "/" + fileList[i].outputName),
-            { pluginName: this.props.pluginName }
+            { pluginName: this.props.pluginName,
+              userName: this.props.userName}
           );
       }
-
 
   },
 

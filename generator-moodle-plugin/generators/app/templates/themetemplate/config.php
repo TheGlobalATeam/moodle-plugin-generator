@@ -18,7 +18,7 @@
  * The configuration for theme_<%= pluginName %> is defined here.
  *
  * @package     theme_<%= pluginName %>
- * @copyright   Global A Team
+ * @copyright   <%= userName %>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

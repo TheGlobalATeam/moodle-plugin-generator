@@ -19,10 +19,11 @@
  *
  * @package     <%= pluginName %>
  * @category    string
- * @copyright   Global A Team
+ * @copyright   <%= userName %>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = '<%= pluginName %>';
+$string['copyright'] = '<%= userName %>';

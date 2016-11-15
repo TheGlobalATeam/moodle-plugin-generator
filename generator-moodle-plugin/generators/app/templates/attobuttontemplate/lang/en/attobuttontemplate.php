@@ -18,7 +18,7 @@
  * String for atto plugin 'atto_<%= pluginName %>', language 'en'
  *
  * @package     atto_button_<%= pluginName %>
- * @copyright   YourName
+ * @copyright   <%= userName %>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

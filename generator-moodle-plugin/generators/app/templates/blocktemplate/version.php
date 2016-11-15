@@ -21,7 +21,7 @@
  * version needs to be updated to trigger an upgrade when signed in.
  *
  * @package <%= pluginName %>
- * @copyright YourName
+ * @copyright <%= userName %>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

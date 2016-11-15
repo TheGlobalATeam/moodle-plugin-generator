@@ -22,7 +22,7 @@
 
 /**
  * @package    filter_<%= pluginName %>
- * @copyright  2005 Nigel McNie <nigel@geshi.org>
+ * @copyright  <%= userName %>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

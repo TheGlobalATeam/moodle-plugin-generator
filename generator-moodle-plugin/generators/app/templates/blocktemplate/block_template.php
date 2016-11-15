@@ -21,7 +21,7 @@
  * mainly defining the Html of the view.
  *
  * @package <%= pluginName %>
- * @copyright YourName
+ * @copyright <%= userName %>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
